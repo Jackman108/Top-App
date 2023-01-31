@@ -2,17 +2,19 @@ import styles from './Button.module.css';
 import { ButtonProps } from './Button props';
 import classNames from 'classnames/bind';
 
-const cx = classNames.bind(styles);
+const styleNames = classNames.bind(styles);
 
-export const Button = ({ apperance, children }: ButtonProps): JSX.Element => {
-	const className = cx(styles.button, {
+export const Button = ({ apperance, children, className, ...props }: ButtonProps): JSX.Element => {
+	const names = styleNames(styles.button, className, {
 		[styles.primary]: apperance == 'primary',
 		[styles.ghost]: apperance == 'ghost'
 	});
 
 	return (
 		<button
-			className={className}>
+			className={names}
+			{...props}
+		>
 			{children}
 		</button >
 	);
