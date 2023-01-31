@@ -1,4 +1,4 @@
-/* stylelint-disable no-missing-end-of-source-newline */
+/* stylelint-disable color-hex-case */
 html,
 body {
 	margin: 0;
@@ -22,11 +22,12 @@ a {
 
 :root {
 	--black: #3B434E;
-	--write: write;
+	--gray-light: #EBEBEB;
+	--white: white;
 	--primary: #7653FC;
+	--primary-hover: #6f61a9;
 	--red: #FC836D;
 	--green: #1DC37E;
 	--green-light: #C8F8E4;
-	/* stylelint-disable-next-line no-eol-whitespace */
 	--font-family: "Noto Sans KR", sans-serif;
 }

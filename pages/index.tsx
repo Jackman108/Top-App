@@ -1,4 +1,4 @@
-import { Htag } from '@/components';
+import { Button, Htag } from '@/components';
 import Head from 'next/head';
 
 
@@ -18,6 +18,8 @@ export default function Home(): JSX.Element {
 			<main >
 				<>
 					<Htag tag='h1'> Текст </Htag>
+					<Button apperance='primary'>Кнопка</Button>
+					<Button apperance='ghost'>Кнопка2</Button>
 				</>
 			</main>
 		</>
