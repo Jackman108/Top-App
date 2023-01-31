@@ -1,3 +1,4 @@
+import { Htag } from '@/components';
 import Head from 'next/head';
 
 
@@ -15,7 +16,9 @@ export default function Home(): JSX.Element {
 
 			</Head>
 			<main >
-				GOgle fonts
+				<>
+					<Htag tag='h1'> Текст </Htag>
+				</>
 			</main>
 		</>
 	);
