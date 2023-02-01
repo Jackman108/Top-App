@@ -1,4 +1,5 @@
 import { Button, Htag } from '@/components';
+import { Ptag } from '@/components/Ptag/Ptag';
 import Head from 'next/head';
 
 
@@ -20,6 +21,9 @@ export default function Home(): JSX.Element {
 					<Htag tag='h1'> Текст </Htag>
 					<Button apperance='primary' arrow='right'>Кнопка</Button>
 					<Button apperance='ghost' arrow='down'>Кнопка</Button>
+					<Ptag size='l'>Обзац</Ptag>
+					<Ptag>Обзац</Ptag>
+					<Ptag size='s'>Обзац</Ptag>
 				</>
 			</main>
 		</>
