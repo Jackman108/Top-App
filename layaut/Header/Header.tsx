@@ -1,5 +1,5 @@
 import { HeaderProps } from './Header.props';
-import styles from './Sidebar.module.css'
+import styles from './Sidebar.module.css';
 
 
 export const Header = ({ ...props }: HeaderProps): JSX.Element => {
