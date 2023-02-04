@@ -3,7 +3,7 @@ import { withLayout } from '@/layaut/Layout';
 import { GetStaticProps } from 'next';
 import { useState } from 'react';
 import axios from 'axios';
-import { MenuItem } from '@/components/menu.interface';
+import { MenuItem } from '@/interfaces/menu.interface';
 
 function Home({ menu }: HomeProps): JSX.Element {
 
