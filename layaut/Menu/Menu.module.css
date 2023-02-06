@@ -45,8 +45,7 @@
 }
 
 .secondBlock {
-	margin-top: 15px;
-	margin-left: 12px;
+	margin: 15px 0 0 12px;
 	padding: 0 0 0 32px;
 
 	list-style: none;
@@ -55,11 +54,15 @@
 }
 
 .secondLevelBlock {
-	overflow: hidden;
+	display: none;
+}
 
-	padding: 0;
+.secondLevelBlockOpened {
+	display: block;
+}
 
-	list-style: none;
+.secondLevelBlockOpened:last-child {
+	margin-bottom: 20px;
 }
 
 .thirdLevel {
