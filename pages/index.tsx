@@ -1,4 +1,4 @@
-import { Button, Htag, Tag, Ptag, Rating } from '@/components';
+import { Button, Htag, Tag, Ptag, Rating, Input } from '@/components';
 import { withLayout } from '@/layaut/Layout';
 import { GetStaticProps } from 'next';
 import { useState } from 'react';
@@ -21,6 +21,7 @@ function Home({ menu }: HomeProps): JSX.Element {
 			<Tag size='s' color='green'>Green</Tag>
 			<Tag color='primary'>Primary</Tag>
 			<Rating rating={rating} isEditable setRating={setRating} />
+			<Input placeholder='test' />
 		</>
 	);
 }
