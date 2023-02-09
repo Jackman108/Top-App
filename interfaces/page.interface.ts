@@ -47,7 +47,7 @@ export interface TopPageModel {
 	alias: string;
 	title: string;
 	category: string;
-	seoText: string;
+	seoText?: string;
 	tagsTitle: string;
 	metaTitle: string;
 	metaDescription: string;
@@ -56,12 +56,12 @@ export interface TopPageModel {
 	createdAt: Date;
 	updatedAt: Date;
 	__v: number;
-	hh: HhData;
-	addresses: string;
-	categoryOn: string;
-	blog: Blog;
-	sravnikus: Sravnikus;
-	learningclub: Learningclub;
+	hh?: HhData;
+	addresses?: string;
+	categoryOn?: string;
+	blog?: Blog;
+	sravnikus?: Sravnikus;
+	learningclub?: Learningclub;
 }
 
 
