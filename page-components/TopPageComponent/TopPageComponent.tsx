@@ -1,4 +1,4 @@
-import { Advantages, HhData, Htag, Sort, Tag } from '@/components';
+import { Advantages, HhData, Htag, Product, Sort, Tag } from '@/components';
 import { TopPageComponentProps } from './TopPageComponent.props';
 import styles from './TopPageComponent.module.css';
 import { TopLevelCategory } from '@/interfaces/page.interface';
@@ -22,7 +22,7 @@ export const TopPageComponent = ({ page, products, firstCategory }: TopPageCompo
 				<Sort sort={sort} setSort={setSort} />
 			</div>
 			<div>
-				{sortProducts && sortProducts.map(p => (<div key={p._id}>{p.title}</div>))}
+				{sortProducts && sortProducts.map(p => (<Product key={p._id} product={p} />))}
 			</div>
 			<div className={styles.hhTitle}>
 				<Htag tag='h2'>Вакансии -{page.category}</Htag>
