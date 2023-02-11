@@ -30,7 +30,8 @@
 		"next-env.d.ts",
 		"**/*.ts",
 		"**/*.tsx",
-		"additional.d.ts"
+		"additional.d.ts",
+		"components/Divider/Divider/.props.ts"
 	],
 	"exclude": [
 		"node_modules"
