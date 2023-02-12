@@ -10,6 +10,7 @@ export interface Blog {
 }
 
 export interface ReviewModel {
+	map(arg0: (r: any) => JSX.Element): import("react").ReactNode;
 	_id: string;
 	name: string;
 	title: string;
