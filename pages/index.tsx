@@ -11,8 +11,8 @@ function Home({ menu }: HomeProps): JSX.Element {
 	return (
 		<>
 			<Htag tag='h1'>Текст</Htag>
-			<Button apperance='primary' arrow='right'>Кнопка</Button>
-			<Button apperance='ghost' arrow='down'>Кнопка</Button>
+			<Button appearance='primary' arrow='right'>Кнопка</Button>
+			<Button appearance='ghost' arrow='down'>Кнопка</Button>
 			<Ptag size='l'>Обзац</Ptag>
 			<Ptag>Обзац</Ptag>
 			<Ptag size='s'>Обзац</Ptag>

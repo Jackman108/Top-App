@@ -8,6 +8,7 @@ body {
 	background: #F5F6F8;
 
 	font-family: "Noto Sans KR", sans-serif;
+	display: grid;
 }
 
 a {
@@ -17,7 +18,7 @@ a {
 }
 
 * {
-	box-sizing: border-box;
+	box-sizing: content-box;
 }
 
 :root {

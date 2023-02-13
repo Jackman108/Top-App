@@ -10,6 +10,7 @@ import { Divider } from '../Divider/Divider';
 import Image from 'next/image';
 import { useState } from 'react';
 import { Review } from '../Review/Review';
+import { ReviewForm } from '../ReviewForm/ReviewForm';
 
 const styleNames = classNames.bind(styles);
 
@@ -61,9 +62,9 @@ export const Product = ({ product, className, ...props }: ProductProps): JSX.Ele
 				</div>
 				<Divider className={styleNames(styles.hr, styles.hr2)} />
 				<div className={styles.actions}>
-					<Button apperance='primary'>Узнать подробнее</Button>
+					<Button appearance='primary'>Узнать подробнее</Button>
 					<Button
-						apperance='ghost'
+						appearance='ghost'
 						arrow={isReviewOpened ? 'down' : 'right'}
 						className={styles.reviewButton}
 						onClick={() => setIsReviewOpened(!isReviewOpened)}
@@ -80,6 +81,7 @@ export const Product = ({ product, className, ...props }: ProductProps): JSX.Ele
 						<Divider />
 					</div>
 				))}
+				<ReviewForm productId={product._id} />
 			</Card>
 		</>
 	);

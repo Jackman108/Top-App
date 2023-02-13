@@ -12,6 +12,7 @@
 	font-size: 16px;
 	line-height: 22px;
 	font-family: var(--font-family);
+	display: grid;
 }
 
 .input::placeholder {

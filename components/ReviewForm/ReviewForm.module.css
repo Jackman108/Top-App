@@ -1,0 +1,92 @@
+.reviewForm {
+	display: grid;
+	grid-template-columns: auto 1fr auto;
+	grid-template-areas:
+		"name title rating"
+		"description description description"
+		"submit submit submit"
+	;
+
+	font-size: 14px;
+	line-height: 24px;
+	gap: 20px 30px;
+	align-items: center;
+}
+
+.name {
+	grid-area: name;
+}
+
+.title {
+	grid-area: title;
+	justify-self: left;
+}
+
+.rating {
+	display: grid;
+	grid-area: rating;
+	grid-template-columns: auto 1fr;
+	gap: 20px;
+}
+
+.description {
+	grid-area: description;
+	margin: 0;
+
+}
+
+.submit {
+	grid-area: submit;
+}
+
+.info {
+	margin-left: 15px;
+}
+
+.succsess {
+	background: var(--green-light);
+	padding: 20px;
+	position: relative;
+	border-radius: 5px;
+	margin-top: 20px;
+}
+
+.succsessTitle {
+	font-weight: bold;
+}
+
+.close {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	cursor: pointer;
+}
+
+@media screen and (max-width: 1180px) {
+	.reviewForm {
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas:
+			"name title"
+			"rating rating"
+			"description description"
+			"submit submit"
+		;
+	}
+
+	.title {
+		justify-self: normal;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.reviewForm {
+		grid-template-columns: 1fr;
+		grid-template-areas:
+			"name"
+			"title"
+			"rating"
+			"description"
+			"submit"
+		;
+	}
+}
