@@ -31,6 +31,7 @@
 		"cross-env": "^7.0.3",
 		"eslint": "^8.32.0",
 		"eslint-plugin-react-hooks": "^4.6.0",
+		"react-hook-form": "^7.43.1",
 		"stylelint": "^14.16.1",
 		"stylelint-config-standard": "^29.0.0",
 		"stylelint-order": "^6.0.1",
