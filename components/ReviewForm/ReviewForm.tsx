@@ -11,7 +11,7 @@ import { IReviewForm } from './ReviewForm.interface';
 
 const styleNames = classNames.bind(styles);
 
-export const ReviewForm = ({ productId, className, ...props }: ReviewFormProps): JSX.Element => {
+export const ReviewForm = ({ className, ...props }: ReviewFormProps): JSX.Element => {
 	const { register, control, handleSubmit, formState: { errors } } = useForm<IReviewForm>();
 	const onSubmit = (data: IReviewForm) => {
 		console.log(data);
@@ -42,12 +42,15 @@ export const ReviewForm = ({ productId, className, ...props }: ReviewFormProps):
 					<Controller
 						control={control}
 						name='rating'
+						rules={{ required: { value: true, message: 'Укажите рейтинг' } }}
 						render={({ field }) => (
 							<Rating
 								isEditable
 								rating={field.value}
 								ref={field.ref}
-								setRating={field.onChange} />
+								setRating={field.onChange}
+								error={errors.rating}
+							/>
 						)}
 					/>
 				</div>
