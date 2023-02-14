@@ -37,7 +37,11 @@ export const ReviewForm = ({ productId, className, ...props }: ReviewFormProps):
 						control={control}
 						name='rating'
 						render={({ field }) => (
-							<Rating isEditable rating={field.value} setRating={field.onChange} />
+							<Rating
+								isEditable
+								rating={field.value}
+								ref={field.ref}
+								setRating={field.onChange} />
 						)}
 					/>
 				</div>
