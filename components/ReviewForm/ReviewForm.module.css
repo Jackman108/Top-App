@@ -30,7 +30,9 @@
 }
 
 .description {
+	display: grid;
 	grid-area: description;
+	justify-items: center;
 	margin: 0;
 
 }

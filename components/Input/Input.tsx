@@ -5,12 +5,18 @@ import { ForwardedRef, forwardRef } from 'react';
 
 const styleNames = classNames.bind(styles);
 
-export const Input = forwardRef(({ className, ...props }: InputProps, ref: ForwardedRef<HTMLInputElement>): JSX.Element => {
+export const Input = forwardRef(({ className, error, ...props }: InputProps, ref: ForwardedRef<HTMLInputElement>): JSX.Element => {
 	return (
-		<input
-			className={styleNames(className, styles.input)}
-			ref={ref}
-			{...props}
-		/>
+		<div className={styleNames(className, styles.inputWrapper)}>
+			<input
+				className={styleNames(className, styles.input, {
+					[styles.error]: error
+				})}
+				ref={ref}
+				{...props}
+			/>
+			{error && <span className={styles.errorMessage}>{error.message}</span>}
+		</div>
+
 	);
 });
