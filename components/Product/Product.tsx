@@ -14,6 +14,7 @@ import { ReviewForm } from '../ReviewForm/ReviewForm';
 import { motion } from 'framer-motion';
 
 
+
 const styleNames = classNames.bind(styles);
 
 export const Product = motion(forwardRef(({ product, className, ...props }: ProductProps, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
@@ -31,6 +32,7 @@ export const Product = motion(forwardRef(({ product, className, ...props }: Prod
 			behavior: 'smooth',
 			block: 'start'
 		});
+		reviewRef.current?.focus();
 	};
 
 	return (
@@ -95,14 +97,15 @@ export const Product = motion(forwardRef(({ product, className, ...props }: Prod
 				<Card
 					color='blue'
 					className={styles.reviews}
-					ref={reviewRef}>
+					ref={reviewRef}
+					tabIndex={isReviewOpened ? 0 : 1}>
 					{product.reviews.map(r => (
 						<div key={r._id}>
 							<Review review={r} />
 							<Divider />
 						</div>
 					))}
-					<ReviewForm productId={product._id} />
+					<ReviewForm productId={product._id} isOpened={isReviewOpened} />
 				</Card>
 			</motion.div>
 		</div>

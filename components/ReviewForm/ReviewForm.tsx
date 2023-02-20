@@ -7,23 +7,23 @@ import { Textarea } from '../Textarea/Textarea';
 import { Button } from '../Button/Button';
 import CloseIcon from './close.svg';
 import { useForm, Controller } from 'react-hook-form';
-import { IReviewForm, IReviewSentResponce } from './ReviewForm.interface';
+import { IReviewForm, IReviewSentResponse } from './ReviewForm.interface';
 import axios from 'axios';
 import { API } from '@/helpers/api';
 import { useState } from 'react';
 
 const styleNames = classNames.bind(styles);
 
-export const ReviewForm = ({ productId, className, ...props }: ReviewFormProps): JSX.Element => {
+export const ReviewForm = ({ productId, isOpened, className, ...props }: ReviewFormProps): JSX.Element => {
 	const { register, control, handleSubmit, formState: { errors }, reset } = useForm<IReviewForm>();
-	const [isSuccsess, setIsSuccsess] = useState<boolean>(false);
+	const [isSuccess, setIsSuccess] = useState<boolean>(false);
 	const [error, setError] = useState<string>();
 
 	const onSubmit = async (formData: IReviewForm) => {
 		try {
-			const { data } = await axios.post<IReviewSentResponce>(API.review.createDemo, { ...formData, productId });
+			const { data } = await axios.post<IReviewSentResponse>(API.review.createDemo, { ...formData, productId });
 			if (data.message) {
-				setIsSuccsess(true);
+				setIsSuccess(true);
 				reset();
 			} else {
 				setError('Что-то пошло не так');
@@ -44,6 +44,7 @@ export const ReviewForm = ({ productId, className, ...props }: ReviewFormProps):
 					placeholder='Имя'
 					className={styles.name}
 					error={errors.name}
+					tabIndex={isOpened ? 0 : -1}
 				/>
 				<Input
 					{...register('title', {
@@ -52,6 +53,7 @@ export const ReviewForm = ({ productId, className, ...props }: ReviewFormProps):
 					placeholder='Заголовок отзыва'
 					className={styles.title}
 					error={errors.title}
+					tabIndex={isOpened ? 0 : -1}
 				/>
 				<div className={styles.rating}>
 					<span>Оценка:</span>
@@ -77,18 +79,19 @@ export const ReviewForm = ({ productId, className, ...props }: ReviewFormProps):
 					placeholder='Текст отзыва'
 					className={styles.description}
 					error={errors.description}
+					tabIndex={isOpened ? 0 : -1}
 				/>
 				<div className={styles.submit}>
-					<Button appearance='primary'>Отправить</Button>
+					<Button appearance='primary' tabIndex={isOpened ? 0 : -1}>Отправить</Button>
 					<span className={styles.info}>* Перед публикацией отзыв пройдет предварительную модерацию и проверку</span>
 				</div>
 			</div>
-			{isSuccsess && <div className={styleNames(styles.succsess, styles.panel)}>
+			{isSuccess && <div className={styleNames(styles.succsess, styles.panel)}>
 				<div className={styles.succsessTitle}>Ваш отзыв отправлен</div>
 				<div>
 					Спасибо, Ваш отзыв будет опубликован после проверки.
 				</div>
-				<CloseIcon className={styles.close} onClick={() => setIsSuccsess(false)} />
+				<CloseIcon className={styles.close} onClick={() => setIsSuccess(false)} />
 			</div>}
 			{error && <div className={styleNames(styles.error, styles.panel)}>
 				Что-то пошло не так, попробуйте обновить страницу

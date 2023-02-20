@@ -5,6 +5,6 @@ export interface IReviewForm {
 	rating: number;
 }
 
-export interface IReviewSentResponce {
+export interface IReviewSentResponse {
 	message: string;
 }
