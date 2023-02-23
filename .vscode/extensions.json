@@ -1,5 +1,6 @@
 {
 	"recommendations": [
-		"ms-vscode.js-debug-nightly"
+		"ms-vscode.js-debug-nightly",
+		"seyyedkhandon.firacode"
 	]
 }
