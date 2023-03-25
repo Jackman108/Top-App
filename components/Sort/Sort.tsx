@@ -15,8 +15,8 @@ export const Sort = ({ sort, setSort, className, ...props }: SortProps): JSX.Ele
 				className={styleNames({
 					[styles.active]: sort == SortEnum.Rating
 				})}
-				area-selected={sort == SortEnum.Rating}
-				area-labelledby="sort rating"
+				aria-selected={sort == SortEnum.Rating}
+				aria-labelledby="sort rating"
 			>
 				<SortIcon className={styles.sortIcon} /> По рейтингу
 			</button>
@@ -26,8 +26,8 @@ export const Sort = ({ sort, setSort, className, ...props }: SortProps): JSX.Ele
 				className={styleNames({
 					[styles.active]: sort == SortEnum.Price
 				})}
-				area-selected={sort == SortEnum.Price}
-				area-labelledby="sort price"
+				aria-selected={sort == SortEnum.Price}
+				aria-labelledby="sort price"
 			>
 				<SortIcon className={styles.sortIcon} /> По цене
 			</button>

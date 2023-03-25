@@ -24,7 +24,7 @@ export interface ProductModel {
 	categories: string[];
 	tags: string[];
 	title: string;
-	image?: string;
+	image: string;
 	description: string;
 	link: string;
 	price: number;
