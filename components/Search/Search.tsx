@@ -20,20 +20,20 @@ export const Search = ({ className, ...props }: SearchProps): JSX.Element => {
 			}
 		});
 	};
-	const hendleKeyDown = (e: KeyboardEvent) => {
+	const handleKeyDown = (e: KeyboardEvent) => {
 		if (e.key == 'Enter') {
 			goToSearch();
 		}
 	};
 
 	return (
-		<div className={styleNames(className, styles.search)} {...props}>
+		<form className={styleNames(className, styles.search)} {...props} role="search">
 			<Input
 				className={styles.input}
 				placeholder='Поиск...'
 				value={search}
 				onChange={(e) => setSearch(e.target.value)}
-				onKeyDown={hendleKeyDown}
+				onKeyDown={handleKeyDown}
 			/>
 			<Button
 				appearance='primary'
@@ -44,6 +44,6 @@ export const Search = ({ className, ...props }: SearchProps): JSX.Element => {
 				<GlassIcon />
 			</Button>
 
-		</div>
+		</form>
 	);
 };
