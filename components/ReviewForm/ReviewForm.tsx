@@ -15,7 +15,7 @@ import { useState } from 'react';
 const styleNames = classNames.bind(styles);
 
 export const ReviewForm = ({ productId, isOpened, className, ...props }: ReviewFormProps): JSX.Element => {
-	const { register, control, handleSubmit, formState: { errors }, reset } = useForm<IReviewForm>();
+	const { register, control, handleSubmit, formState: { errors }, reset, clearErrors } = useForm<IReviewForm>();
 	const [isSuccess, setIsSuccess] = useState<boolean>(false);
 	const [error, setError] = useState<string>();
 
@@ -45,6 +45,7 @@ export const ReviewForm = ({ productId, isOpened, className, ...props }: ReviewF
 					className={styles.name}
 					error={errors.name}
 					tabIndex={isOpened ? 0 : -1}
+					area-invalid={errors.name ? true : false}
 				/>
 				<Input
 					{...register('title', {
@@ -54,6 +55,7 @@ export const ReviewForm = ({ productId, isOpened, className, ...props }: ReviewF
 					className={styles.title}
 					error={errors.title}
 					tabIndex={isOpened ? 0 : -1}
+					area-invalid={errors.title ? true : false}
 				/>
 				<div className={styles.rating}>
 					<span>Оценка:</span>
@@ -80,9 +82,11 @@ export const ReviewForm = ({ productId, isOpened, className, ...props }: ReviewF
 					className={styles.description}
 					error={errors.description}
 					tabIndex={isOpened ? 0 : -1}
+					aria-label='Тект отзыва'
+					area-invalid={errors.description ? true : false}
 				/>
 				<div className={styles.submit}>
-					<Button appearance='primary' tabIndex={isOpened ? 0 : -1}>Отправить</Button>
+					<Button appearance='primary' tabIndex={isOpened ? 0 : -1} onClick={() => clearErrors()}>Отправить</Button>
 					<span className={styles.info}>* Перед публикацией отзыв пройдет предварительную модерацию и проверку</span>
 				</div>
 			</div>
