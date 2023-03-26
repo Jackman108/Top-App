@@ -52,7 +52,7 @@
 	margin-top: 20px;
 }
 
-.succsess {
+.success {
 	background: var(--green-light);
 }
 
@@ -60,7 +60,7 @@
 	background: var(--red-light);
 }
 
-.succsessTitle {
+.successTitle {
 	font-weight: bold;
 }
 
@@ -68,7 +68,8 @@
 	position: absolute;
 	top: 20px;
 	right: 20px;
-	cursor: pointer;
+	border: none;
+	background: none;
 }
 
 .error .close path {
