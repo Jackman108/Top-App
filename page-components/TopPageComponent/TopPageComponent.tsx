@@ -8,15 +8,15 @@ import { sortReducer } from './sort.reducer';
 import { useReducedMotion } from 'framer-motion';
 
 export const TopPageComponent = ({ page, products, firstCategory }: TopPageComponentProps): JSX.Element => {
-	const [{ products: sortProducts, sort }, dispathSort] = useReducer(sortReducer, { products, sort: SortEnum.Rating });
+	const [{ products: sortProducts, sort }, dispatchSort] = useReducer(sortReducer, { products, sort: SortEnum.Rating });
 	const shouldReduceMotion = useReducedMotion();
 
 	const setSort = (sort: SortEnum) => {
-		dispathSort({ type: sort });
+		dispatchSort({ type: sort });
 	};
 
 	useEffect(() => {
-		dispathSort({ type: 'reset', initialState: products });
+		dispatchSort({ type: 'reset', initialState: products });
 	}, [products]);
 
 	return (
