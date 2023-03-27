@@ -6,13 +6,13 @@ import ym from 'react-yandex-metrika';
 import { YMInitializer } from 'react-yandex-metrika';
 import Router from 'next/router';
 
-function App({ Component, pageProps, router }: AppProps): JSX.Element {
-	Router.events.on('routeChangeComplete', (url: string) => {
-		if (typeof window != 'undefined') {
-			ym('hit', url);
-		}
-	});
+Router.events.on('routeChangeComplete', (url: string) => {
+	if (typeof window != 'undefined') {
+		ym('hit', url);
+	}
+});
 
+function App({ Component, pageProps, router }: AppProps): JSX.Element {	
 	return <>;
 		<Head>
 			<title>MyTop - наш лучший топ</title>
