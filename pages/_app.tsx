@@ -1,5 +1,5 @@
 import '@/styles/globals.css';
-import { AppProps } from 'next/app';
+import { AppProps } from 'next/dist/shared/lib/router/router';
 import Head from 'next/head';
 import React from 'react';
 import ym from 'react-yandex-metrika';

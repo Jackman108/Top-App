@@ -1,7 +1,7 @@
 .button {
 	width: 30px;
 	height: 40px;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+	box-shadow: 0px 4px 4px rgba(0 0 0 / 5%);
 	border-radius: 10px;
 	cursor: pointer;
 	border: none;
